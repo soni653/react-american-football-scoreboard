@@ -7,8 +7,8 @@ function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.
   //You'll need one for the home score and another for the away score.
 
-  const [ value, setHome] = useState(21);
-  const [ setValue, setAway]= useState(14);
+  const [ home, setHome] = useState(21);
+  const [ away, setAway]= useState(14);
 
   return (
     <div className="container">
@@ -19,12 +19,12 @@ function App() {
 
             {/* TODO STEP 3 - We need to change the hardcoded values in these divs to accept dynamic values from our state. */}
 
-          <div className="home__score">{value}</div>
+          <div className="home__score">{home}</div>
           </div>
           <div className="timer">03:01</div>
           <div className="away">
             <h2 className="away__name">Giants</h2>
-            <div className="away__score">{setValue}</div>
+            <div className="away__score">{away}</div>
           </div>
         </div>
         <BottomRow />
@@ -34,21 +34,21 @@ function App() {
           {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
         <section className="buttons">
         <div className="homeButtons">
-            <button onClick = { () => setHome(value + 7)}
+            <button onClick = { () => setHome(home + 7)}
                 className = 'homeButtons_touchdown'>
                           Touch Down
             </button>
-            <button onClick = { () => setHome(value + 3)} 
+            <button onClick = { () => setHome(home + 3)} 
               className = 'homeButtons__fieldGoal'>
                            Field Goal
             </button>
           </div>
         <div className = 'awayButtons'>
-          <button onClick = { () => setAway(setValue + 7)}
+          <button onClick = { () => setAway(away + 7)}
               className = 'awayButtons__touchdown'>
                            Touch Down
           </button>
-          <button onClick = { () => setAway(setValue + 3)}
+          <button onClick = { () => setAway(away + 3)}
               className = 'awayButtons__fieldGoal'>
                            Field Goal
           </button>
